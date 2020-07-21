@@ -56,7 +56,8 @@ function coerceInt(value) {
   }
 
   if (value > MAX_INT || value < MIN_INT) {
-    throw new TypeError("Int cannot represent non 32-bit signed integer value: ".concat((0, _inspect.default)(value)));
+    console.warn("FIX : Int cannot represent non 32-bit signed integer value: ".concat((0, _inspect.default)(value)))
+    // throw new TypeError("Int cannot represent non 32-bit signed integer value: ".concat((0, _inspect.default)(value)));
   }
 
   return value;
