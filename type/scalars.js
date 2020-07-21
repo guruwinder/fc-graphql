@@ -40,11 +40,11 @@ function serializeInt(value) {
   }
 
   if (!(0, _isInteger.default)(num)) {
-    throw new TypeError("Int cannot represent non-integer value: ".concat((0, _inspect.default)(value)));
+    console.warn("Int cannot represent non-integer value: ".concat((0, _inspect.default)(value)));
   }
 
   if (num > MAX_INT || num < MIN_INT) {
-    throw new TypeError("Int cannot represent non 32-bit signed integer value: ".concat((0, _inspect.default)(value)));
+    console.warn("Int cannot represent non 32-bit signed integer value: ".concat((0, _inspect.default)(value)));
   }
 
   return num;
@@ -52,12 +52,11 @@ function serializeInt(value) {
 
 function coerceInt(value) {
   if (!(0, _isInteger.default)(value)) {
-    throw new TypeError("Int cannot represent non-integer value: ".concat((0, _inspect.default)(value)));
+    console.warn("Int cannot represent non-integer value: ".concat((0, _inspect.default)(value)));
   }
 
   if (value > MAX_INT || value < MIN_INT) {
-    console.warn("FIX : Int cannot represent non 32-bit signed integer value: ".concat((0, _inspect.default)(value)))
-    // throw new TypeError("Int cannot represent non 32-bit signed integer value: ".concat((0, _inspect.default)(value)));
+    console.warn("Int cannot represent non 32-bit signed integer value: ".concat((0, _inspect.default)(value)));
   }
 
   return value;
